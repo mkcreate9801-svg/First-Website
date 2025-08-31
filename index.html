@@ -1738,9 +1738,28 @@ button:visited{
 
 
             </DIV>
+             <script>
+function searchName() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let forms = document.querySelectorAll('.MAIN form');
+
+    forms.forEach(form => {
+        // Get button text and remove numbering (everything before the first dot)
+        let buttonText = form.textContent.toLowerCase().replace(/^\d+\./, '').trim();
+
+        if (buttonText.includes(input)) {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    });
+}
+</script>
+    
         </HTML>
         
 
 
 
     
+
